@@ -7,14 +7,14 @@ terraform {
     }
   }
   backend "s3" {
-    bucket         = "my-ews-baket1"
+    bucket         = "e2e-mern-tf"
     region         = "us-east-1"
-    key            = "eks/terraform.tfstate"
-    dynamodb_table = "Lock-Files"
+    key            = "LockID"
+    dynamodb_table = "e2e-mern-tf-state"
     encrypt        = true
   }
 }
 
 provider "aws" {
-  region  = var.aws-region
+  region = var.aws-region
 }
